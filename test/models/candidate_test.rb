@@ -1,7 +1,12 @@
 require "test_helper"
 
 class CandidateTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @candidate = Candidate.new(name: "New Candidate")
+  end
+  test "create candidate" do
+    @candidate.save!
+    assert_equal @candidate.save!, true
+  end
+  
 end

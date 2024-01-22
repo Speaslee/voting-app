@@ -6,13 +6,13 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "puma", ">= 5.0"
 gem "importmap-rails"
-gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'devise'
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'slim-rails'
 
 
 group :development, :test do

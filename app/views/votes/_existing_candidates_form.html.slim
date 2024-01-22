@@ -1,0 +1,6 @@
+= form_for @vote do |f|
+    =f.collection_radio_buttons :candidate_id, @candidates, :id, :name do |b|
+        = b.radio_button
+        = b.label
+        br
+    button.btn-primary Vote

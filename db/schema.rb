@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_21_195453) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_22_031243) do
   create_table "candidates", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -18,10 +18,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_21_195453) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.integer "zipcode"
+    t.string "email", default: "", null: false
+    t.integer "zipcode", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password"
+    t.datetime "last_sign_in_at"
+    t.integer "sign_in_count"
+    t.datetime "current_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "votes", force: :cascade do |t|

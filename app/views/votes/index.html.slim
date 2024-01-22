@@ -1,0 +1,11 @@
+h1 Election Results
+- if @candidates.any?
+
+    table  
+        - @candidates.each do |candidate|
+            tr.candidate-table
+                td.candidate_name=candidate.name
+                td.vote=candidate.votes.count
+
+- else
+    h2 No candidates have been voted for yet

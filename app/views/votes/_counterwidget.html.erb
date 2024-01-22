@@ -1,0 +1,15 @@
+<script>
+    function countdown() {
+        var sessionExpires = ("<%=current_user.sign_out_in%>")
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = sessionExpires - now;
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("coutdown_clock").innerHTML = minutes + ":" + seconds.toString().padStart(2, '0') + " remaining";
+    
+        }, 1000);
+    }
+    countdown();
+</script>
+<div> <span id="coutdown_clock"></span></div>

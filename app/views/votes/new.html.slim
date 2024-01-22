@@ -1,0 +1,14 @@
+
+h1 Cast your vote today!
+-if current_user
+    -if @candidates.any?
+        =render "existing_candidates_form"
+    -else
+        p No Candidates yet, please write one in below!
+    p
+    -if not @candidates.any? && @candidates.count > 10
+        hr
+        p Or, add a new candidate:
+        =render "new_candidates_form"
+-else
+    h2 Please Login to Vote or Submit a Candidate
